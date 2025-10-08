@@ -1,64 +1,74 @@
-Program Documentation
-1. Program Title
+# Number Converter — Program Documentation
 
-Number System Converter
+## Overview
+Small desktop GUI application built with Kivy to convert numbers between Binary, Octal, Decimal, and Hexadecimal. Single-file implementation: `c:\Users\ADIX.C\main.py`.
 
-2. Purpose of the Program
+## Purpose
+Provide a simple, colorized UI for quick base conversions and serve as a learning/refactorable example.
 
-The Number System Converter is a cross-platform application that enables users to convert numbers between four different numeral systems:
+## Requirements (Windows)
+- Python 3.8+
+- Kivy (install via `pip install kivy`)
+- Optional: Visual Studio Code for editing/debugging
 
-Binary (Base 2)
+## Installation & Run (Windows PowerShell)
+1. Create & activate virtual environment:
+   .venv\Scripts\Activate.ps1
+2. Install dependencies:
+   pip install kivy
+3. Run the app:
+   python c:\Users\ADIX.C\main.py
 
-Decimal (Base 10)
+## Files
+- c:\Users\ADIX.C\main.py — GUI and conversion logic (current single-file app)
+- c:\Users\ADIX.C\Documents\process.md — this documentation
 
-Octal (Base 8)
+## UI Layout (high level)
+1. Title bar (blue)
+2. Input row (white) — TextInput for source number
+3. Dropdowns (green) — "From" and "To" number systems (Spinner widgets)
+4. Buttons (purple) — Convert and Clear
+5. Output area (faded black) — readonly TextInput showing results/errors
 
-Hexadecimal (Base 16)
+## Conversion Logic
+- Supported systems: Binary (base 2), Octal (8), Decimal (10), Hexadecimal (16)
+- Mapping: `base_map = {"Decimal":10, "Binary":2, "Octal":8, "Hexadecimal":16}`
+- Parse source: `decimal_val = int(value, base_map[from_sys])`
+- Format target:
+  - Decimal: `str(decimal_val)`
+  - Binary: `bin(decimal_val)[2:]`
+  - Hexadecimal: `hex(decimal_val)[2:].upper()`
+  - Octal: `oct(decimal_val)[2:]`
+- Errors caught and displayed in output box.
 
-This tool is useful for learners, software developers, and anyone needing to work with various number representations.
+## Suggested Refactor (for testability)
+Extract conversion to a pure function:
+def convert_number(value: str, from_sys: str, to_sys: str) -> str
 
-3. Features
+Benefits:
+- Unit testing with pytest
+- Simpler error handling & input validation
+- Keeps UI code focused on presentation
 
-Convert numbers between Binary, Decimal, Octal, and Hexadecimal
+## Example conversions
+- "10" from Decimal to Binary -> "1010"
+- "FF" from Hexadecimal to Decimal -> "255"
 
-Auto-validation of inputs based on selected base
+## Testing
+- Add pytest tests for:
+  - Valid conversions
+  - Invalid input (raise ValueError or return explicit error)
+  - Edge cases (negative numbers, zero, very large values)
 
-Instant display of converted results
+## Troubleshooting
+- Kivy install failures: check Python version and Kivy Windows docs (SDL2 dependencies).
+- Input parsing errors: ensure correct digits for selected input base.
+- UI rendering issues: run from terminal to view Kivy logs.
 
-Simple and intuitive user interface
+## Next steps / Improvements
+- Move conversion logic to a module and add tests.
+- Add input validation per base and informative error messages.
+- Add copy-to-clipboard, conversion history, and keyboard shortcuts.
 
-Works on Web, Android, and iOS platforms
-
-4. System Architecture
-Frontend (User Interface)
-
-Input field for the number
-
-Dropdown menu for base selection
-
-Convert button
-
-Output area displaying results in all other number systems
-
-Backend (Logic Layer)
-
-Functions for converting between:
-
-Binary ↔ Decimal
-
-Decimal ↔ Octal
-
-Decimal ↔ Hexadecimal
-
-Validation functions to ensure correct format based on selected base
-
-Optional Future Enhancements
-
-Save conversion history for each user session
-
-Support for fractional values and signed numbers
-
-Export results
-
-5. System Design
-Data Flow Diagram (DFD)
+## Changelog
+- v1.0 — Initial single-file implementation and documentation.
