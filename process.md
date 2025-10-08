@@ -1,76 +1,50 @@
 # Number Converter — Team Process Documentation
 
-Purpose
-- Provide a clear, repeatable process for a 5‑person team to develop, test, review and release the Number Converter app (c:\Users\ADIX.C\main.py).
+BSC. COMPUTER SCIENCE  
+YEAR 2  
+COURSE: SPC 2207  
+PROJECT: AUTOMATION OF NUMBER SYSTEMS CONVERSION
 
-Team & Responsibilities (5 members)
-- Product Owner (PO)
-  - Define features, acceptance criteria, prioritize backlog.
-  - Validate UI/UX and sign off on releases.
-- Tech Lead
-  - Architecture, design decisions, approve major refactors.
-  - Final code reviewer for complex PRs.
-- Developer A
-  - Implement new features and UI changes.
-  - Create unit tests for implemented logic.
-- Developer B
-  - Refactor, extract conversion logic to testable modules.
-  - Maintain code quality and linting.
-- QA / DevOps
-  - Write/execute test plans, run automated tests.
-  - Configure CI, releases, and environment docs.
+## GROUP MEMBERS
+1. ANTONY KARIUKI — CT101/G/23600/24  
+2. MARTIN NZIOKI — CT101/22078/24  
+3. CARREN KOSKEI — CT101/G/22817/24  
+4. CYLVIA AMDANY — CT101/G/22712/24  
+5. ADRIAN MWANGI — CT101/G/22872/24
 
-Workflow
-- Issue tracking: create an issue per task with acceptance criteria.
-- Branching:
-  - feature/<issue-id>-short-desc
-  - bugfix/<issue-id>-short-desc
-  - release/vX.Y.Z
-  - main is protected; PRs required to merge.
-- PR rules:
-  - Link issue, list changes, include screenshots if UI changed.
-  - Must have 1 developer reviewer + Tech Lead for major changes.
-  - CI green, unit tests passing, linter passing.
-  - Update CHANGELOG.md entry for visible changes.
+## INTRODUCTION
+Problem statement:  
+Numbers are represented in different systems in digital electronics. Conversion between these systems manually is time consuming and error prone. For example, digital clocks convert binary data to decimal.  
+This project aims to automate the conversion process by developing an application that can accurately convert numbers from one base to another.
 
-Code & Testing Standards
-- Keep conversion logic pure and testable (suggest: convert_number(value, from_sys, to_sys) -> str).
-- Use type hints and simple docstrings.
-- Write unit tests with pytest under tests/.
-- Linting with flake8/black (team decides formatter); run before PR.
-- Minimum test coverage: add tests for main conversion paths and edge cases.
+## OBJECTIVES
+- Design and implement a program that converts numbers between Decimal, Binary, Octal and Hexadecimal.  
+- Automate the process to minimize human errors.  
+- Create a user-friendly UI accessible on mobile (Android and iOS).  
+- Deploy the final project and provide documentation for future reference.
 
-Local Setup & Run (Windows PowerShell)
-- Create venv and activate:
-  python -m venv .venv
-  .venv\Scripts\Activate.ps1
-- Install deps:
-  pip install kivy pytest
-- Run app:
-  python c:\Users\ADIX.C\main.py
-- Run tests:
-  pytest -q
+## TOOLS USED
+1. Programming language & framework: Python with Kivy  
+2. Collaboration: GitHub  
+3. Design tools: EdrawMax (for DFDs)  
+4. Testing tools: Manual unit testing  
+5. Documentation: Microsoft Word
 
-CI & Releases
-- CI jobs:
-  - Install deps, run linter, run pytest.
-  - Build artifact if needed (wheel, executable).
-- Release:
-  - Create release branch, QA sign‑off, tag vX.Y.Z, merge to main, publish artifact or share script.
+## GROUP MEMBERS ROLES
+1. ADRIAN MWANGI — Backend logic (conversion algorithms), Project Manager  
+2. ANTONY KARIUKI — Deployment and Testing  
+3. MARTIN NZIOKI — Frontend and User Interface Design  
+4. CYLVIA AMDANY — System Design (flowcharts, diagrams)  
+5. CARREN KOSKEI — Process Documentation and Program Documentation
 
-Code Review Checklist
-- Does it meet acceptance criteria?
-- Is conversion logic separated and covered by tests?
-- No sensitive data or hardcoded secrets.
-- UI changes accessible and documented.
-- Commit messages clear and follow pattern: <type>(<scope>): short description
+## EXPECTED OUTCOMES
+- A working application that converts between number systems.  
+- A well-documented process and program.  
+- A deployed version accessible on Android and iOS.  
+- Collaboration proof (GitHub).
 
-Communication & Meetings
-- Daily standup (10–15 min).
-- Sprint length: 1 or 2 weeks (team choice).
-- Use a shared channel (Slack/Teams) for ad‑hoc coordination.
 
-Notes / Next Improvements
-- Add input validation per base and better error messages.
-- Add copy-to-clipboard, history, and keyboard shortcuts.
-- Consider packaging (PyInstaller) for easier distribution.
+
+
+
+
