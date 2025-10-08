@@ -1,4 +1,64 @@
-Program Documentation: Kivy Number ConverterThis document provides a technical breakdown of the Kivy Number Converter source code. It is intended for developers who need to understand, maintain, or extend the application.1. Application OverviewThe Number Converter is a single-file Python application built with the Kivy framework. It provides a graphical user interface (GUI) to convert numbers between four common numeral systems: Decimal, Binary, Octal, and Hexadecimal.2. PrerequisitesTo run this application, you need to have Python and the Kivy library installed.# Install Kivy using pip
-pip install kivy
-3. How to RunSave the code as a Python file (e.g., converter.py) and run it from your terminal:python converter.py
-4. Code ArchitectureThe entire application is contained within a single class, ConverterApp, which inherits from kivy.app.App. This class is responsible for building the UI, handling user events, and performing the conversion logic.5. Class and Method Breakdownclass ConverterApp(App)This is the main class for the application.build(self)This is the entry point for building the application's UI. It is called automatically when the app is run.Window Setup: Sets the background color and title of the main window.Root Widget: Initializes a vertical BoxLayout (root) to serve as the main container for all other UI elements.UI Sections: The method constructs the UI in five distinct horizontal sections:Title (title_layout): A BoxLayout containing a Label widget. A blue Rectangle is drawn on its canvas for the background.Input (input_layout): A BoxLayout containing the primary TextInput widget (self.number_input) for user entry. It has a white background.Dropdowns (dropdown_layout): A BoxLayout containing two Spinner widgets (self.from_system, self.to_system) to select the source and target number systems. It has a green background.Buttons (btn_layout): A BoxLayout containing two Button widgets for "Convert" and "Clear" actions. It has a purple background.Output (output_layout): A BoxLayout containing a read-only TextInput (self.output_box) to display the result. It has a faded black background and is configured to fill the remaining vertical space.Dynamic Backgrounds: For each layout with a colored background, a Rectangle is drawn on its canvas. The bind method is used to link the layout's size and pos properties to a corresponding _update_bg* method to ensure the background resizes with the window.Return Value: Returns the root widget, which Kivy then displays._update_bg1, _update_bg2, _update_bg3, _update_bg4, _update_bg5These are helper methods used as callbacks for the bind function.Parameters:instance: The widget instance that triggered the callback (e.g., title_layout).value: The new value of the property that changed.Function: Each method updates the size and pos of its corresponding background Rectangle (self.bg1, self.bg2, etc.) to match the size and pos of the instance. This keeps the visual background perfectly aligned with the layout.convert(self, instance)This method contains the core conversion logic. It is triggered when the "Convert" button is pressed.Get Inputs: It retrieves the number string from self.number_input and the selected systems from self.from_system and self.to_system.Error Handling: The entire logic is enclosed in a try...except block to gracefully handle invalid inputs (e.g., "G" in a decimal number), preventing the app from crashing.Validation: It checks if the input string is empty and displays a message if it is.Conversion to Decimal: A dictionary base_map is used to associate the string names of the systems with their integer bases (e.g., "Hexadecimal": 16). The Python built-in int(value, base) is used to convert the input number string from its source base into a standard decimal integer.Conversion to Target: A series of if/elif statements checks the target system (to_sys) and uses the appropriate Python built-in function to format the decimal value into the target string:bin() for Binaryoct() for Octalhex() for Hexadecimalstr() for DecimalString slicing ([2:]) is used to remove the "0b", "0o", and "0x" prefixes from the output of these functions.Display Result: The final formatted string is set as the text of self.output_box. If an error occurs, the exception message is displayed instead.clear_input(self, instance)A simple utility method bound to the "Clear" button's on_press event.Function: It clears the text in the self.number_input field and resets the self.output_box text to its default state.
+Program Documentation
+1. Program Title
+
+Number System Converter
+
+2. Purpose of the Program
+
+The Number System Converter is a cross-platform application that enables users to convert numbers between four different numeral systems:
+
+Binary (Base 2)
+
+Decimal (Base 10)
+
+Octal (Base 8)
+
+Hexadecimal (Base 16)
+
+This tool is useful for learners, software developers, and anyone needing to work with various number representations.
+
+3. Features
+
+Convert numbers between Binary, Decimal, Octal, and Hexadecimal
+
+Auto-validation of inputs based on selected base
+
+Instant display of converted results
+
+Simple and intuitive user interface
+
+Works on Web, Android, and iOS platforms
+
+4. System Architecture
+Frontend (User Interface)
+
+Input field for the number
+
+Dropdown menu for base selection
+
+Convert button
+
+Output area displaying results in all other number systems
+
+Backend (Logic Layer)
+
+Functions for converting between:
+
+Binary ↔ Decimal
+
+Decimal ↔ Octal
+
+Decimal ↔ Hexadecimal
+
+Validation functions to ensure correct format based on selected base
+
+Optional Future Enhancements
+
+Save conversion history for each user session
+
+Support for fractional values and signed numbers
+
+Export results
+
+5. System Design
+Data Flow Diagram (DFD)
