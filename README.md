@@ -72,3 +72,12 @@ Benefits:
 
 ## Changelog
 - v1.0 — Initial single-file implementation and documentation.
+## Authors
+
+This project was completed by the following team members:
+
+- **Adrian Mwangi** - [@adchase521](https://github.com/adchase521)
+- **Caren Koskei** 
+- **Martin Nzioki** 
+- **Cylvia Amdany** 
+- **Antony Kariuki** 
