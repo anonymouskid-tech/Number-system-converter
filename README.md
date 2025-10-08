@@ -76,7 +76,7 @@ Benefits:
 
 This project was completed by the following team members:
 
-- **Adrian Mwangi** - [@adchase521](https://github.com/adchase521)
+- **Adrian Mwangi** 
 - **Caren Koskei** 
 - **Martin Nzioki** 
 - **Cylvia Amdany** 
