@@ -1,7 +1,7 @@
 # Number Converter — Program Documentation
 
 ## Overview
-Small desktop GUI application built with Kivy to convert numbers between Binary, Octal, Decimal, and Hexadecimal. Single-file implementation: `c:\Users\ADIX.C\main.py`.
+Small desktop GUI application built with Kivy to convert numbers between Binary, Octal, Decimal, and Hexadecimal. Single-file implementation.
 
 ## Purpose
 Provide a simple, colorized UI for quick base conversions and serve as a learning/refactorable example.
