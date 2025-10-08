@@ -1,9 +1,9 @@
-🔢 Multi-Base Converter
+## Multi-Base Converter
 This is a comprehensive number system converter application designed to facilitate easy and quick conversion between four fundamental number bases: Binary, Decimal, Octal, and Hexadecimal.
 
 The application is built for simplicity and accuracy, providing a seamless experience for developers, students, and anyone needing quick base conversions across multiple platforms.
 
-✨ Features
+## Features
 The converter supports bi-directional conversion among the following number systems:
 
 Binary (Base 2)
@@ -14,7 +14,7 @@ Octal (Base 8)
 
 Hexadecimal (Base 16)
 
-🛠️ System Architecture
+## System Architecture
 The application is structured into a straightforward two-part system:
 
 Frontend UI: Provides a responsive interface with input fields for entering the number, a selection mechanism for choosing the source base, and a dedicated area to display the converted results.
@@ -23,7 +23,7 @@ Backend Logic: Contains the core conversion algorithms responsible for accuratel
 
 Future Feature: An optional feature is planned to store and retrieve a user's history of conversions.
 
-🚀 How to Use (User Manual)
+## How to Use (User Manual)
 The application is designed to be intuitive and cross-platform.
 
 Open the App: Launch the application on your desired platform (Web, Android, or iOS).
@@ -36,8 +36,8 @@ Convert: Press the Convert button.
 
 View Results: The system automatically converts and displays the results in the required formats (Decimal, Binary, Octal, Hexadecimal).
 
-💻 Technical Details & Code Example
-The logic employs standard conversion techniques (e.g., repeated division for decimal-to-any base, positional notation for any base-to-decimal).
+ Technical Details & Code Example
+## The logic employs standard conversion techniques (e.g., repeated division for decimal-to-any base, positional notation for any base-to-decimal).
 
 A Python implementation using the Flet framework illustrates the core cross-platform structure:
 
@@ -121,14 +121,14 @@ def main(page: ft.Page):
 
 # ft.app(target=main) # Uncomment to run Flet app locally
 
-✅ Testing Plan
+## Testing Plan
 To ensure the reliability and accuracy of the conversions, a robust testing plan is implemented:
 
 Unit Tests: Comprehensive unit tests are written for all core conversion functions to guarantee mathematical accuracy across all base transformations.
 
 Manual Testing: The UI is manually tested across different devices and platforms to verify usability and the correct display of results.
 
-📦 Deployment
+## Deployment
 The application is designed for wide accessibility and is deployed to multiple major platforms:
 
 Web
